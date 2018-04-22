@@ -2755,6 +2755,8 @@ Last change: 1-May-16
 	padding-top: 11px;
 	position: relative;
 	text-transform: uppercase;
+	text-shadow: 1px 1px black;
+}
 }
 .portfolio-boxed-3-col .hover-content h4::before {
 	content: "";
