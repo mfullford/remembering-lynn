@@ -132,7 +132,7 @@ Last change: 1-May-16
 	background-color: #974537;
 }
 .zeus .tp-bullet  {
-	border: 2px solid #998675;
+	border: 2px solid white;
 }
 
 /* Slider 2 */
@@ -2564,7 +2564,7 @@ Last change: 1-May-16
 	left: 0;
 	right: 0;
 	display: inline-block;
-	background-color: rgba(51,44,37,0.75);
+	/*background-color: rgba(51,44,37,0.75);*/
 	mix-blend-mode: saturation;
 	position: absolute;
 }
@@ -5608,6 +5608,7 @@ Last change: 1-May-16
 	top: 0;
 	bottom: 0;
 	z-index: -1;
+	border: none;
 }
 .call-out-style-4 .call-out-box {
 	padding: 75px 0;
@@ -10358,7 +10359,7 @@ Last change: 1-May-16
 	z-index: 1;
 }
 .pricing-style-4 .pricing-content a.order-plan {
-	background-color: #332c25;
+	background-color: #c7b29e;
 	color: #fff;
 	display: inline-block;
 	padding: 12px 12px 12px 30px;
@@ -10379,11 +10380,11 @@ Last change: 1-May-16
 	background-color: #d49d19;
 }
 .pricing-style-4.pricing-home1 .pricing-content .pricing-title::before {
-	background-color: rgba(116,100,85,0.75);
+	/*background-color: rgba(116,100,85,0.75);*/
 	background-blend-mode: multiply;
 }
 .pricing-style-4.pricing-home1 .pricing-content:hover a.order-plan {
-	background-color: #cf4900;
+	background-color: rgba(0, 63, 60,0.70);
 }
 
 /* - Services Page */

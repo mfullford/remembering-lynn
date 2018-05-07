@@ -286,7 +286,7 @@ Last change: 2-May-16
 
 /* - Footer Section 4 */
 .footer-section-4 {
-	border-top: 2px solid #998675;
+	/*border-top: 2px solid #998675;*/
 	padding: 54px 0;
 }
 .footer-section-4 .ftr-social {
