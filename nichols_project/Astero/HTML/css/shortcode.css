@@ -125,6 +125,23 @@ Last change: 1-May-16
     transition: all 1s ease 0s;
     margin-top: 7px;
 }
+
+.center-buttons {
+	background-color: #974537;
+    color: #fff;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-left: 45%;
+    padding: 12px 22px;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-transition: all 1s ease 0s;
+    -moz-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+    margin-top: 7px;
+}
 .fetures-img-block::before{
 	background-color: rgba(51,44,37,0.6);
 	content: "";
