@@ -12,8 +12,8 @@
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Query the table to insert new memories data
-		$query = "INSERT INTO `_WWU_memories` (name, email, message, input_date) 
-		VALUES (:name, :email, :message, '2018-10-19')";
+		$query = "INSERT INTO `_WWU_memories` (name, email, message) 
+		VALUES (:name, :email, :message)";
 
 		//prepare statement
 		$stmt = $connection->prepare($query);

@@ -1181,17 +1181,65 @@
 			});
 		}
 
-				/* - Update Guestbook */
+		function getAllMemories() {
+			//making AJAX call to get all memories
+			$.ajax({
+		    url: "db/getMemories.php",
+		    cache: false,
+		    success: function (memories) {
+		    	//convert memories from json to a plain object
+					memories = jQuery.parseJSON(memories);
+
+					//this is the element to which all the new memories will be appended
+					const commentList = $( "ol.commentlist" );
+
+					//loop through each memory and create elements with correct styles for each
+					for(var i = 0; i <= memories.length; i++)
+					{
+	    			commentList.append(
+							$(document.createElement('li')).addClass('comment').append(
+								$(document.createElement('div')).addClass('comment_container').append(
+									$(document.createElement('div')).addClass('comment-text').append(
+										$( "<p class='meta'></p>" ).html('<strong>'+memories[i].name+' #</strong>')
+									).append(
+										$( "<div class='description'></div>" ).text(memories[i].message)
+									))));
+					}
+		    },
+				error: function(xhr, textStatus, errorThrown) {
+					console.log(xhr, textStatus, errorThrown);
+				}
+			});
+		}
+
+
+		/* - Getting All Memories for Guestbook On Load - */
+		if($( "div#memories" ).length){
+			event.preventDefault();
+
+			getAllMemories();
+		}
+
+		/* - Update Guestbook */
 		$( "#guestbook_btn_submit" ).on( "click", function(event) {
 			event.preventDefault();
 			var myData = $("form").serialize();
-			console.log('myData on functions.js', myData);
+
 			$.ajax({
 				type: "POST",
 				url: "db/postMemories.php",
 				data: myData,
 				success: function(data) {
-					console.log('data returned from postMemories', data);
+					//clear form upon submit
+					$("#input_name").val("");
+					$("#input_email").val("");
+					$("#textarea_message").val("");
+
+					//clear out old memories
+					$( "ol.commentlist" ).empty();
+
+					//call getAllMemories
+					getAllMemories();
 				},
 				error: function(xhr, textStatus, errorThrown) {
 					console.log(xhr, textStatus, errorThrown);
@@ -1199,48 +1247,7 @@
 			});
 			return false;
 		});/* Quick Contact Form /- */
-
-		//dataType: "json",
-
-			// if( data["type"] == "error" ){
-		// $("#alert-msg").html(data["msg"]);
-		// $("#alert-msg").removeClass("alert-msg-success");
-		// $("#alert-msg").addClass("alert-msg-failure");
-		// $("#alert-msg").show();
-	// } else {
-		// $("#alert-msg").html(data["msg"]);
-		// $("#alert-msg").addClass("alert-msg-success");
-		// $("#alert-msg").removeClass("alert-msg-failure");					
-		// $("#input_name").val("");
-		// $("#input_email").val("");
-		// $("#textarea_message").val("");
-		// $("#alert-msg").show();
-	// }
 		
-		/* - Getting All Memories for Guestbook On Load - */
-		if($( "div#memories" ).length){
-			event.preventDefault();
-
-			$.get( "db/getMemories.php" , function(memories) {
-				console.log('memories', memories);
-				console.log('memories type', typeof(memories));
-
-				$( "div#memories" ).text(memories);
-
-				//var memories = jQuery.parseJSON(memories);
-				
-			});
-		}
-
-		/*
-		var memory = [];
-				
-			for(var i = 1; i <= memories.length; i++)
-			{
-				memory = $( "memory-" + i ).text(memories[i]);
-				$( "li.comment" ).text(memory);
-			}
-		*/
 		
 		/* - Counter */
 		if($(".counter-section").length) {

@@ -8,16 +8,12 @@
 	$connection = new PDO("mysql:dbname=" . $database . ";host=" . $host, $username, $password);
 
 	// Query the table for memories data
-	$query = "SELECT * FROM `_WWU_memories`";
+	$query = "SELECT * FROM `_WWU_memories`ORDER BY input_date DESC";
 
 	// Pass query to MySQL database
 	$data = $connection -> query($query)->fetchAll();
 
-	//Return the results to jquery function
-	foreach ($data as $row) {
-		$result = array("name"=>$row["name"],"message"=>$row["message"]);
-
-   	echo $result;
-	}
+	// send data to the front end in json format
+	echo json_encode($data);
 ?>
 
