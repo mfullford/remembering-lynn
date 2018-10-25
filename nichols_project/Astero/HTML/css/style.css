@@ -86,8 +86,15 @@ Primary use:
 .timeline {
 	margin: auto;
 	text-align: center;
-	text-decoration: underline;
+	width: 70%;
+	/*text-decoration: underline;*/
 }
+.block-title {
+		font-size: 20px;
+		margin-bottom: 20px;
+		text-decoration: underline;
+	}
+
 body {
 	background-color: #fafafa;
 	font-family: 'Open Sans', sans-serif;
@@ -360,8 +367,9 @@ main {
     font-size: 21px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    margin-top: 0;
+    margin-top: 20px;
     margin-bottom: 35px;
+    text-decoration: none!important;
     /*text-transform: uppercase;*/
 }
 
@@ -444,8 +452,14 @@ main {
 		margin-bottom: 40px;
 	}
 	
-	.block-title h5 {
+	 h5 {
 		font-size: 20px;
 		margin-bottom: 20px;
+	}
+
+	.block-title {
+		font-size: 20px;
+		margin-bottom: 20px;
+		text-decoration: underline;
 	}
 }
