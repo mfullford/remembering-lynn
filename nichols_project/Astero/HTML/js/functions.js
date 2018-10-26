@@ -1200,7 +1200,7 @@
 							$(document.createElement('li')).addClass('comment').append(
 								$(document.createElement('div')).addClass('comment_container').append(
 									$(document.createElement('div')).addClass('comment-text').append(
-										$( "<p class='meta'></p>" ).html('<strong>'+memories[i].name+' #</strong>')
+										$( "<p class='meta'></p>" ).html('<strong>'+memories[i].name+' </strong>')
 									).append(
 										$( "<div class='description'></div>" ).text(memories[i].message)
 									))));
