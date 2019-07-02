@@ -110,6 +110,15 @@ a,
 button {
     outline: 0 !important;
 }
+a {
+	color: #003f3c;
+}
+.MainPageLink {
+	color: #c7b29e!important;
+}
+.MainPageLink:hover {
+	color: #003f3c!important;
+}
 h1,h2,h3,h4,h5,h6 {
 	word-wrap: break-word;
 }
