@@ -114,10 +114,26 @@ a {
 	color: #003f3c;
 }
 .MainPageLink {
-	color: #c7b29e!important;
+	color: white!important;
 }
 .MainPageLink:hover {
 	color: #003f3c!important;
+}
+@media (max-width: 767px) {
+  .text-xs-center {
+    text-align: center;
+    margin-left: 118px!important;
+  } 
+  .text-xs-video {
+    text-align: center;
+    margin-left: 80px!important;
+  } 
+  .text-xs-gallery {
+    text-align: center;
+    margin-left: 40px!important;
+    margin-bottom: 20px!important;
+    display: inline-block;
+  } 
 }
 h1,h2,h3,h4,h5,h6 {
 	word-wrap: break-word;
